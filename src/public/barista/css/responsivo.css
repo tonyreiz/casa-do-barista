@@ -1,0 +1,573 @@
+/* ATÉ 1200PX (NOTEBOOK) */
+@media (max-width:1200px) {
+
+    /* box bem-vindo */
+    .bem-vindo article {
+        width: 300px;
+
+    }
+
+
+    /* box card */
+    .card article {
+        width: 280px;
+    }
+
+
+    /* setas do evento */
+    .cardEvento .slick-prev {
+        top: 875px;
+        left: 15px;
+        z-index: 2;
+    }
+
+    .cardEvento .slick-next {
+        top: 875px;
+        right: 35px;
+    }
+
+
+
+
+
+    /* BOX galeria */
+    .item {
+        margin-left: 0;
+    }
+
+    /* setas do galeria */
+    .item .slick-prev {
+        left: 10px;
+        z-index: 2;
+        right: 15px;
+        top: 355px;
+    }
+
+    .item .slick-next {
+        right: 15px;
+        top: 355px;
+    }
+
+
+
+
+
+    /* box depoimento */
+    /* .parallax-padrão h3{
+    font-size: 10px;
+    color: red;
+} */
+
+    .roleta {
+        margin-left: 0;
+    }
+
+    /* setas do depoimento */
+    .roleta .slick-prev {
+        left: 25px;
+        z-index: 2;
+
+    }
+
+    .roleta .slick-next {
+
+        right: 25px;
+    }
+
+}
+
+/* FIM DO MEDIA 1200PX - NOTEBOOK */
+
+/* ATÉ 768PX (tablet) */
+@media not all and (max-width: 768px) {
+
+    .abrir-menu,
+    .fechar-menu {
+        display: none;
+    }
+}
+
+
+/* ATÉ 768PX (TABLET) */
+@media (max-width:768px) {
+    .topo {
+        justify-content: space-between;
+    }
+
+    .topo h1 {
+        margin: 10px;
+    }
+
+
+    /* MENU */
+    .menu {
+        background-color: #b56a34;
+        height: 100%;
+        position: fixed;
+        max-width: 650px;
+        width: 30%;
+        z-index: 10;
+        top: 0;
+        right: -600px;
+        transition: right 1s ease-in-out;
+        box-shadow: -3px 0px 5px rgba(181, 106, 52, 0.5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-mobile .menu {
+        right: 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .menu ul li a:hover {
+        color: var(--cor-texto);
+        text-decoration: none;
+    }
+
+    .menu ul li a {
+        margin-left: 0;
+    }
+
+
+
+    .abrir-menu {
+        background-image: url(../assets/ABERTO.png);
+        background-size: cover;
+        padding: 18px;
+        border: 0;
+        display: block;
+        margin-right: 20px;
+    }
+
+
+    .fechar-menu {
+        background-image: url(../assets/FECHADO.png);
+        background-size: cover;
+        padding: 18px;
+        border: 0;
+        display: block;
+        margin: 10px;
+        align-self: flex-start;
+    }
+
+    .menu .redeSocial {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .linha,
+    .login {
+        display: block;
+        margin-bottom: 150px;
+    }
+
+    .login img {
+        margin: 40px 0;
+    }
+
+    /* BOX BEM-VINDO */
+
+    .bem-vindo div {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bem-vindo article{
+        width: 85%;
+        height: auto;
+    }
+
+    .bem-vindo header p {
+
+        width: 85%;
+
+    }
+
+
+    /* BOX DESTAQUE */
+
+    .card {
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card article {
+        width: 55%;
+
+    }
+
+    .card article h4 {
+        font-size: 35px;
+    }
+
+    .card article h5 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /* BOTÃO */
+
+    .class-botao {
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    /* EQUIPE */
+
+    #cardEquipe {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .equipe article {
+        height: 350px;
+        width: 30%;
+    }
+
+
+    /* EVENTO */
+
+
+    .cardEvento .slick-next {
+        display: none;
+    }
+
+
+    .cardEvento .slick-prev:before,
+    .cardEvento .slick-next:before {
+        display: none;
+    }
+
+    /* GALERIA */
+    .item .slick-prev:before,
+    .item .slick-next:before {
+        display: none;
+    }
+
+
+    /* DEPOIMENTO */
+    .roleta .slick-prev:before,
+    .roleta .slick-next:before {
+        display: none;
+    }
+
+
+    /* BOX RODAPÉ */
+    .rodape .rodape-grid {
+
+        flex-direction: column;
+    }
+
+    .coluna-reserva {
+        width: 75%;
+    }
+
+    .box-reserva {
+        top: 50px;
+    }
+
+    .rodape h3 {
+        margin-top: 35px;
+    }
+
+    /* BOX EMAIL */
+
+
+
+    .box-email p {
+        font-size: 16px;
+        margin-top: 80px;
+
+    }
+
+    .box-email form {
+        width: 100%;
+    }
+
+
+
+
+    .box-email form button {
+        width: 44px;
+    }
+
+    .box-email form button img {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    /* BOX REDE SOCIAL */
+
+    .redeSocial ul {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+}
+
+/* FIM DO MEDIA 768PX - TABLET */
+
+
+/* ATÉ 380PX (CELULAR) */
+
+@media (max-width:380px) {
+    .topo {
+        justify-content: space-between;
+    }
+
+    .topo h1 {
+        width: 200px;
+        height: 92px;
+        background-image: url(../assets/LOGO.png);
+        background-size: cover;
+        margin: 10px 10px;
+        text-indent: -9999px;
+    }
+
+
+    /* MENU */
+    .menu {
+        background-color: #b56a34;
+        height: 100%;
+        position: fixed;
+        max-width: 230px;
+        width: 45%;
+        z-index: 10;
+        top: 0;
+        right: -200px;
+        transition: right 1s ease-in-out;
+        box-shadow: -3px 0px 5px rgba(181, 106, 52, 0.5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-mobile .menu {
+        right: 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .menu ul li a:hover {
+        color: var(--cor-texto);
+        text-decoration: none;
+    }
+
+    .menu ul li a {
+        margin-left: 0;
+    }
+
+
+
+    .abrir-menu {
+        background-image: url(../assets/ABERTO.png);
+        background-size: cover;
+        padding: 18px;
+        border: 0;
+        display: block;
+        margin-right: 20px;
+    }
+
+
+    .fechar-menu {
+        background-image: url(../assets/FECHADO.png);
+        background-size: cover;
+        padding: 18px;
+        border: 0;
+        display: block;
+        margin: 10px;
+        align-self: flex-start;
+    }
+
+    .menu .redeSocial {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .linha,
+    .login {
+        display: block;
+        margin-bottom: 110px;
+    }
+
+    .login img {
+        margin: 40px 0;
+    }
+
+    /* BANNER */
+    .banner {
+        display: none;
+    }
+
+
+    /* BOX BEM-VINDO */
+    .bem-vindo header p {
+        width: auto;
+        font-size: 25px;
+    }
+
+    .bem-vindo div {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+
+    .produto article {
+
+        width: 360px;
+    }
+
+
+    /* BOX DESTAQUE */
+    .card article {
+        width: 95%;
+        height: auto;
+    }
+
+    /* BOX CARDÁPIO */
+    .card-flip-miolo {
+        width: 95%;
+
+    }
+
+
+
+    .class-botao {
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0;
+    }
+
+    .botao {
+        padding: 5px 11px;
+    }
+
+    /* BOX EQUIPE */
+  
+    
+    #cardEquipe {
+        width: 85%;
+        height: auto;
+        margin-bottom: 50px;
+        flex-direction: column;   
+    }
+
+    .equipe article{
+        width: 95%;
+        height: auto;
+    }
+
+    /* setas do evento */
+    .cardEvento .slick-prev {
+        left: 10px;
+        z-index: 2;
+        right: 15px;
+        top: 790PX;
+    }
+
+    .cardEvento .slick-next {
+        right: 15px;
+        top: 790PX;
+    }
+
+    /* BOX GALERIA */
+    .item .slick-prev,
+    .item .slick-next {
+        top: 430px;
+    }
+
+
+
+    /* BOX DEPO */
+    .depoimento .parallax-padrao h3 {
+        font-size: 30px;
+    }
+
+    .cliente div {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .roleta .slick-prev,
+    .roleta .slick-next {
+        top: 570px;
+    }
+
+    /* BOX RODAPÉ */
+    .rodape .rodape-grid {
+
+        flex-direction: column;
+    }
+
+    .coluna-reserva {
+        width: 95%;
+    }
+
+    .box-reserva {
+        top: 50px;
+        width: 90%;
+        padding: 15px;
+    }
+
+    .rodape h3 {
+        margin-top: 35px;
+    }
+
+    /* BOX EMAIL */
+
+
+
+    .box-email p {
+        font-size: 16px;
+        margin-top: 80px;
+
+    }
+
+    .box-email form {
+        width: 100%;
+    }
+
+    .box-email form button {
+        width: 25px;
+    }
+
+    .box-email form button img {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    /* BOX REDE SOCIAL */
+
+    .redeSocial ul {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+}
+
+
+
+
+
+/* FIM DO MEDIA 380PX - CELULAR */
