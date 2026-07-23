@@ -34,7 +34,7 @@
 
 
 
-                    <a href="{{ route('home') }}" class="botao">Reserva</a>
+                    <a href="{{ route('contato') }}" class="botao">Reserva</a>
 
                 </div>
 
