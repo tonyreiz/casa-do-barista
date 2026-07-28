@@ -706,6 +706,14 @@ body {
 
 }
 
+.estrela-ativa{
+    opacity: 1;
+}
+
+.estrela-inativa{
+    opacity: .2;
+}
+
 .roleta {
     max-width: 1500px;
     width: 100%;

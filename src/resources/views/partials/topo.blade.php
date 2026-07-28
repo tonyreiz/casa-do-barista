@@ -30,7 +30,7 @@
 
             <div class="login">
 
-                <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/login.png" alt="LOGIN"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="{{ asset('assets/login.png')}}" alt="LOGIN"></a>
             </div>
 
 

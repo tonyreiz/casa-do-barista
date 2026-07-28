@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Depoimento;
 
 class HomeController extends Controller{
 
@@ -18,13 +19,22 @@ class HomeController extends Controller{
         //get() = pega todas os valores/variável
 
         $listaBanner = Banner::where('status_banner', 'ATIVO')->inRandomOrder()->get();
-
-        //retorna as variáveis
         //dd($listaBanner);
+        
+
+        // BUSCAR DEPOIMENTOS APROVADO JUNTOS COM OS DADOS DOS CLIENTE
+
+        $listaDepo = Depoimento::with('DepoimentoCliente')
+        ->where('status_depoimento', 'APROVADO')
+        ->orderByDesc('id_depoimento')
+        ->get();
+
+        //dd($listaDepo->toArray());
+
 
         //Carrega a view
         //OBS: Se itens mais tabelas, adicione ',' no compact e adicone as outras tabelas
-        return view('site.home.home', compact('listaBanner'));
+        return view('site.home.home', compact('listaBanner', 'listaDepo'));
     }
 
 }
