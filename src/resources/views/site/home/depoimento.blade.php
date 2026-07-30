@@ -5,22 +5,22 @@
                 </h3>
             </header>
 
-            @forelse ($listaDepo as $linha)
+            <div class="roleta">
+            @forelse ($listaDepo as $lista)
 
             @php
             // garantir queas estrelas fique entre 0 à 5
                 $estrela = max(
                     0,
-                    min(5, (int) $linha->nota_depoimento)
+                    min(5, (int) $lista->nota_depoimento)
                 );
             //cliente relacionado com depoimento
-                $cliente = $linha->depoimentoCliente
+                $cliente = $lista->depoimentoCliente
 
                 //? = se
                 //: = senão
             @endphp            
 
-                            <div class="roleta">
                             <div class="info">
                                 <div class="estrela">
                                 <ul>
@@ -35,26 +35,26 @@
                                 </div>
 
                                 <div class="cliente">
-                                    <p>{{ $linha->descricao_depoimento}}
+                                    <p>{{ $lista->descricao_depoimento}}
                                     </p>
 
                                     <img src="{{ asset("barista/assets/$cliente->foto_cliente") }}" alt="{{$cliente->nome_cliente}}">
 
                                     <h4>{{$cliente->nome_cliente}}</h4>
                                     <div>
-                                        <h5>Data: {{ $linha->data_criacao_depoimento ? $linha->data_criacao_depoimento->format('d/m/Y') : 'Data não encontrada'}}</h5>
+                                        <h5>Data: {{ $lista->data_criacao_depoimento ? $lista->data_criacao_depoimento->format('d/m/Y') : 'Data não encontrada'}}</h5>
                                         <h5>Café Artesanal</h5>
 
                                     </div>
                                 </div>
                             </div>
 
-                    
+                            
+                            
+                            @empty
+                            
+                            @endforelse
                         </div>
-
-            @empty
-                
-            @endforelse
 
 
         </section>

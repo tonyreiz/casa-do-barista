@@ -2,8 +2,8 @@
   
     <!--COLECTION = Conjunto
     ITEM = Valores -->
-    @foreach ($listaBanner as $linha)
-      <img src="{{ asset("barista/assets$linha->imagem_banner") }}" alt="{{ $linha->titulo_banner}}">
+    @foreach ($listaBanner as $lista)
+      <img src="{{ asset("barista/assets/banner$lista->imagem_banner") }}" alt="{{ $lista->titulo_banner}}">
           
     @endforeach
 

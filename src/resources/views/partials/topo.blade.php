@@ -17,7 +17,22 @@
                     <a class="menu-ativo" href="{{route('home') }}">Home</a>
                 </li>
                 <li><a class="" href="{{ route('sobre') }}">Sobre</a></li>
-                <li><a class="" href="{{ route('cardapio') }}">Cardápio</a></li>
+
+                <!--INÍCIO CARDÁPIO -->
+                <li class="item-submenu"><a class="" href="{{ route('cardapio') }}">Cardápio</a>
+                    
+                    <!--SUBMENU -->
+                    <ul class="submenu">
+                        @foreach ($categoriaMenu as $linha)
+                            
+                        <li>
+                            <a href="{{ route('cardapio.categoria', $linha->id_categoria)}}">{{$linha->nome_categoria}}</a>
+                        </li>
+                        @endforeach
+                    </ul><!--FIM SUBMENU -->
+
+                </li><!--FIM CARDÁPIO -->
+
                 <li><a class="" href="{{ route('eventos' ) }}">Eventos</a></li>
                 <li><a class="" href="{{ route('contato') }}">Contato</a></li>
 
@@ -30,7 +45,7 @@
 
             <div class="login">
 
-                <a href="#" target="_blank" rel="noopener noreferrer"><img src="{{ asset('assets/login.png')}}" alt="LOGIN"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="{{ asset('barista/assets/login.png')}}" alt="LOGIN"></a>
             </div>
 
 

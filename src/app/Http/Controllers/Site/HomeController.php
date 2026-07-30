@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Depoimento;
+use App\Models\Galeria;
+use App\Models\Categoria;
 
 class HomeController extends Controller{
 
@@ -31,10 +33,16 @@ class HomeController extends Controller{
 
         //dd($listaDepo->toArray());
 
+        //BUSCAR IMAGENS DA TABELA GALERIA
+
+        $listaGaleria = Galeria ::where('status_galeria', 'ATIVO')->inRandomOrder()->get();
+        //dd($listaGaleria);
+
+        
 
         //Carrega a view
         //OBS: Se itens mais tabelas, adicione ',' no compact e adicone as outras tabelas
-        return view('site.home.home', compact('listaBanner', 'listaDepo'));
+        return view('site.home.home', compact('listaBanner', 'listaDepo', 'listaGaleria'));
     }
 
 }

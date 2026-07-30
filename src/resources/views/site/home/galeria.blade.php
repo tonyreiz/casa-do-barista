@@ -5,15 +5,12 @@
                 </h3>
             </header>
 
-
             <div class="item">
-                <img src="{{ asset('barista/assets/imagem 1.png') }}" alt="imagem do evento">
-                <img src="{{ asset('barista/assets/imagem 2.png') }}" alt="imagem do evento">
-                <img src="{{ asset('barista/assets/imagem 3.png') }}" alt="imagem do evento">
-                <img src="{{ asset('(barista/assets/imagem 4.png ') }}" alt="imagem do evento">
-                <img src="{{ asset('barista/assets/imagem 5.png') }}" alt="imagem do evento">
+                @foreach ($listaGaleria as $lista)
+    
+                    <img src="{{ asset("barista/assets/$lista->imagem_galeria") }}" alt="{{$lista->nome_galeria}}">
 
-
+                @endforeach
             </div>
-
+    
         </section>
