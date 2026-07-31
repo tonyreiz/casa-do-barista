@@ -455,14 +455,16 @@ body {
 
 }
 
-.flip1 h4 {
+.flip1 h3 {
     color: var(--cor-destaque);
     font-size: 30px;
     font-family: var(--fonte-titulo);
     -webkit-text-stroke: 1px var(--cor-fundo-1);
     position: relative;
-    z-index: 1;
+    
 }
+
+
 
 .flip1 {
     background-image: url(../assets/CAPA\ 1.png);
@@ -1247,4 +1249,35 @@ body {
 .menu .item-submenu .submenu li a:hover {
     color: var(--cor-secundaria-2);
     background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* CAMINHO BANNER CARDÁPIO*/
+
+.parallax-padrao ul{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.parallax-padrao ul li{
+    background-color: #b56a34;
+    width: 150px;
+    height: 65px;
+    border-radius: 10px;
+    border: solid rgba(0, 0, 0, 0.506);
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    transition: transform 0.3s ease;
+}
+
+.parallax-padrao ul li a{
+    font-size: 19px;
+    font-family: var(--fonte-titulo);
+    color: #fff;
+    text-decoration: none;
+}
+
+.parallax-padrao ul li:hover{
+    transform: translateY(-10px) scale(1.10);
 }

@@ -3,7 +3,7 @@
     <!--COLECTION = Conjunto
     ITEM = Valores -->
     @foreach ($listaBanner as $lista)
-      <img src="{{ asset("barista/assets/banner$lista->imagem_banner") }}" alt="{{ $lista->titulo_banner}}">
+      <img src="{{ asset("barista/assets/banner/$lista->imagem_banner") }}" alt="{{ $lista->titulo_banner}}">
           
     @endforeach
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Produto;
+use App\Models\Categoria;
 use App\Models\Galeria;
 
 
@@ -18,11 +19,14 @@ class CardapioController extends Controller{
         ->get();
         //dd($listaProduto->toArray());
 
+        $listaCategoria = Categoria::where('status_categoria', 'ATIVO')
+        ->get();
+
         //SE NEHUMA CATEGORIA ESTIVER NA URL
         if($idCategoria === null){
-            $categoriaSelecionada = $listaProduto->first();
+            $categoriaSelecionada = $listaCategoria->first();
         }else{
-            $categoriaSelecionada = $listaProduto->firstWhere('id_categoria', $idCategoria);
+            $categoriaSelecionada = $listaCategoria->firstWhere('id_categoria', $idCategoria);
         }
 
         // CASO NÃO TENHA A CATEGORIA
@@ -38,6 +42,6 @@ class CardapioController extends Controller{
         //dd($produtos);
 
 
-        return view('site.cardapio.cardapio', compact('listaProduto', 'listaGaleria', 'produtos', 'categoriaSelecionada'));
+        return view('site.cardapio.cardapio', compact('listaProduto', 'listaCategoria', 'listaGaleria', 'produtos', 'categoriaSelecionada'));
     }
 }
