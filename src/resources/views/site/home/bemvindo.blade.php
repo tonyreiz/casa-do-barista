@@ -13,7 +13,7 @@
                 <article>
                     <h5>2025</h5>
                     <h4>INAUGURAÇÃO</h4>
-                    <img src="{{ asset('barista/assets/coffee.svg" alt="Casa do Barista - Métodos de preparo artesanais') }}">
+                    <img src="{{ asset('barista/assets/coffee.svg')}}" alt="Casa do Barista - Métodos de preparo artesanais">
                     <p>Desde o espresso perfeito até métodos filtrados como V60, prensa francesa e Aeropress.
 
                     </p>
@@ -22,14 +22,14 @@
                 <article>
                     <h5>2025</h5>
                     <h4>NOVA UNIDADE</h4>
-                    <img src="{{ asset('barista/assets/coffee.svg" alt="Casa do Barista - Métodos de preparo artesanais') }}">
+                    <img src="{{ asset('barista/assets/coffee.svg')}}" alt="Casa do Barista - Métodos de preparo artesanais">
                     <p>Trabalhamos com fazendas familiares e microlotes que garantem qualidade e história.</p>
                 </article>
 
                 <article>
                     <h5>2025</h5>
                     <h4>FRANQUIAS</h4>
-                    <img src="{{ asset('barista/assets/coffee.svg" alt="Casa do Barista - Métodos de preparo artesanais') }}">
+                    <img src="{{ asset('barista/assets/coffee.svg')}}" alt="Casa do Barista - Métodos de preparo artesanais">
                     <p>Receitas feitas para harmonizar com os cafés, com foco em ingredientes frescos e artesanais.</p>
                 </article>
             </div>

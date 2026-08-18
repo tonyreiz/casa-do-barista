@@ -59,11 +59,4 @@ Cada xícara é uma narrativa do produtor ao barista, do barista ao cliente. Aqu
     <link rel="stylesheet" href="{{asset('barista/css/style.css') }}">
     <link rel="stylesheet" href="{{asset('barista/css/responsivo.css') }}">
 
-
-
-
-
-
-
-
 </head>
