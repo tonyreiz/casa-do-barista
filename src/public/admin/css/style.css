@@ -1,0 +1,149 @@
+/* FONTES */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: "Geometry Soft Pro-bold N";
+    src: url(/barista/fonts/Geometry\ Soft\ Pro-Bold\ N.otf) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+:root {
+
+    /* CORES */
+    --cor-fundo-1: #F3E8DC;
+    --cor-fundo-2: #2e2e2e;
+    --cor-primaria: #4b2e1e;
+    --cor-secundaria-1: #8b5e3c;
+    --cor-secundaria-2: #b56a34;
+    --cor-destaque: #5c6945;
+    --cor-neutra-form: #e1dfdf;
+
+    --cor-texto: #2e2e2e;
+    --cor-titulo: #4b2e1e;
+    --cor-subtitulo: #8b5e3c;
+
+
+    /* FONTES */
+    --fonte-texto: "Bebas Neue", sans-serif;
+    --fonte-titulo: "Geometry Soft Pro-Bold N";
+
+}
+
+
+
+/* NAV */
+
+
+.app-sidebar{
+    background: #0b0b0b !important;
+}
+
+.sidebar-wrapper .sidebar-menu > .nav-item.menu-open > .nav-link.active{
+    background-color: var(--cor-secundaria-2);
+}
+
+.sidebar-wrapper .sidebar-menu > .nav-item > .nav-link:hover, .sidebar-wrapper .sidebar-menu > .nav-item > .nav-link:focus{
+    background-color: var(--cor-secundaria-2);
+}
+
+.sidebar-menu .nav-header{
+    font-size: 1.2rem;
+    font-family: var(--fonte-titulo);
+}
+
+
+.sidebar-menu .nav-link p{
+    font-size: 0.9rem;
+}
+
+.sidebar-menu .nav-link p:hover{
+    color: #fff;
+}
+
+/* LOGO */
+
+.sidebar-brand .brand-link .brand-image{
+    padding: 20px 0;
+    max-height: 90px;
+}
+
+
+
+.app-footer{
+    background-color: #4b2e1e;
+    color: #fff;
+}
+
+
+/*INPUT*/
+
+.form-control:focus{
+    border-color: var(--cor-secundaria-2) !important;
+    box-shadow: var(--cor-secundaria-2)  0 0 10px;
+}
+
+.text-bg-primary{
+    background-color: var(--cor-secundaria-2)  !important;
+}
+
+
+/* BOTÃO INPUT */
+
+.btn:hover{
+    border-color: var(--cor-secundaria-2) !important;
+    box-shadow: var(--cor-secundaria-2)  0 0 10px;
+    background-color: rgba(0, 0, 0, 0.752);
+
+}
+
+/*CARDS*/
+
+.small-box{
+    background-color: var(--cor-secundaria-2)  !important;
+}
+
+
+/*TEXTO CARDS*/
+
+.small-box h3{
+    color: #fff;
+    font-family: var(--fonte-texto);
+}
+
+
+.small-box p{
+    color: #fff;
+    font-family: var(--fonte-texto);
+}
+
+/*TEXTO FOOTER*/
+
+ .small-box > .small-box-footer{
+    color: #fff !important;
+}
+
+/*ÍCONES*/
+
+ .small-box .small-box-icon{
+    color: rgba(0, 0, 0, 0.444) !important;
+}
+
+/*ÂNCORAGEM DE CAMINHO*/
+
+.app-main .app-content-header .breadcrumb a{
+    color: var(--cor-secundaria-2);
+}
+
+
+/* TÍTULO PRINCIPÁL */
+
+.fs-3{
+    font-family: var(--fonte-titulo);
+}
+
+h1, .h1{
+    font-family: var(--fonte-titulo);
+}

@@ -67,6 +67,7 @@
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
     <link rel="preload" href="{{ asset('admin/css/adminlte.css') }}" as="style" />
+    
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
@@ -115,4 +116,8 @@
       integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
+
+    
 </head>

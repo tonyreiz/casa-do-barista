@@ -111,7 +111,13 @@ $('.roleta').slick({
   ]
 });
 
-new WOW().init();
+new WOW({
+  boxClass: 'wow',
+  animateClass: 'animate__animated',
+  offset: 0,
+  mobile: true,
+  live: true
+}).init();
 
 // MENU MOBILE  
 
