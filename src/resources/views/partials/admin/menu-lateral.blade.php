@@ -44,7 +44,7 @@
             >
 
                  <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('dash')}}" class="nav-link">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     DASHBOARD
@@ -92,7 +92,7 @@
 
               <li class="nav-header">SITE</li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('admin.banner.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-card-image"></i>
                   <p>
                     BANNER

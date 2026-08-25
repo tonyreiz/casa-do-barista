@@ -45,7 +45,7 @@
 
             <div class="login">
 
-                <a href="#" target="_blank" rel="noopener noreferrer"><img src="{{ asset('barista/assets/login.png')}}" alt="LOGIN"></a>
+                <a href="{{ route('dash')}}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('barista/assets/login.png')}}" alt="LOGIN"></a>
             </div>
 
 

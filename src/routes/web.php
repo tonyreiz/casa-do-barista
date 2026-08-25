@@ -8,6 +8,7 @@ use App\Http\Controllers\Site\EventosController;
 use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Site\CardapioController;
 use App\Http\Controllers\Site\AdminController;
+use App\Http\Controllers\Site\BannerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -22,4 +23,6 @@ Route::get('/cardapio/categoria/{id_categoria}', [CardapioController::class, 'ca
 
 Route::get('/contato', [ContatoController:: class, 'contato'])->name('contato');
 
-Route::get('/dash', [AdminController:: class, 'dash'])->name('dash');
+Route::get('dash', [AdminController:: class, 'dash'])->name('dash');
+
+Route::get('/banners', [BannerController::class, 'index'])->name('admin.banner.index');

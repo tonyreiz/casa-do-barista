@@ -52,6 +52,7 @@
 .sidebar-menu .nav-header{
     font-size: 1.2rem;
     font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria-2);
 }
 
 
@@ -146,4 +147,10 @@
 
 h1, .h1{
     font-family: var(--fonte-titulo);
+}
+
+/* SPAN TÍTULO BANNER */
+
+.badge{
+    color: #000;
 }
