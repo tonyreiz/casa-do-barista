@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Depoimento;
 use App\Models\Galeria;
+use App\Models\Tempo;
 use App\Models\Categoria;
 
 class HomeController extends Controller{
@@ -39,10 +40,13 @@ class HomeController extends Controller{
         //dd($listaGaleria);
 
         
-
+        $listaTempo = Tempo::where('status_linha_tempo', 'ATIVO')
+        ->inRandomOrder()
+        ->get();
+        
         //Carrega a view
         //OBS: Se itens mais tabelas, adicione ',' no compact e adicone as outras tabelas
-        return view('site.home.home', compact('listaBanner', 'listaDepo', 'listaGaleria'));
+        return view('site.home.home', compact('listaBanner', 'listaDepo', 'listaGaleria', 'listaTempo'));
     }
 
 }

@@ -1,5 +1,4 @@
-
-      <main class="app-main">
+<main class="app-main">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -7,13 +6,13 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h1 class="mb-0 fs-3">Banners</h1>
+                <h1 class="mb-0 fs-3">Produtos</h1>
               </div>
               <div class="col-sm-6">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb float-sm-end">
                     <li class="breadcrumb-item"><a href="{{ route('dash')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Banner</li>
+                    <li class="breadcrumb-item active" aria-current="page">Produto</li>
                   </ol>
                 </nav>
               </div>
@@ -36,7 +35,7 @@
                   <div class="card-header">
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
-                        <h3 class="card-title">Banners Cadastrados</h3>
+                        <h3 class="card-title">Produtos Cadastrados</h3>
                       </div>
                       <div class="col-12 col-md-8">
                         <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -48,8 +47,8 @@
                               type="search"
                               id="user-search"
                               class="form-control"
-                              placeholder="Pesquisar Banner"
-                              aria-label="Pesquisar Banner"
+                              placeholder="Pesquisar Produto"
+                              aria-label="Pesquisar Produto"
                               style="width: 180px"
                             />
                           </div>
@@ -63,15 +62,7 @@
                             <option value="editor">Inativos</option>
                             
                           </select>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modal-add-user"
-                          >
-                            <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            Novo Banner
-                          </button>
+
                         </div>
                       </div>
                     </div>
@@ -84,47 +75,85 @@
                         <thead>
                           <tr>
                             <th>Código</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
                             <th>Imagem</th>
-                            <th>Título</th>
+                            <th>Destaque</th>
                             <th>Status</th>
                             <th class="text-end">Ações</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @forelse ($listaBanner as $lista)
+                          @forelse ($listaProduto as $lista)
+
+                          @php
+                            $categoria = $lista->ProdutoCategoria;    
+                          @endphp
                           <tr>
                             {{-- ID --}}
                             <td>
-                              {{$lista->id_banner}}
+                              {{$lista->id_produto}}
                             </td>
 
-                            {{-- IMAGEM --}}
+                            {{-- Nome Produto--}}
                             <td>
-                              @if($lista->imagem_banner)
-                                 <img 
-                                 src="{{ asset('barista/assets/' . $lista->imagem_banner)}}" alt="{{$lista->titulo_banner}}"
-                                 class="rounded"
-                                 style="
-                                    width: 100px;
-                                    height: 75px;
-                                    object-fit: cover;
-                                 "
-                                 >
+
+                              @if($lista->nome_produto)
+                                 <span class="badge text-bg-sucess"> {{$lista->nome_produto}}</span>
                                   
                               @else
                                 <span class="text-muted">
-                                  Sem Imagem
+                                  Sem Produto
                                 </span> 
                               @endif
                             </td>
 
-                            {{-- TÍTULO --}}
+                            {{-- CATEGORIA --}}
                             <td>
-                              <span class="badge text-bg-sucess"> {{$lista->titulo_banner}}</span>
+                                <span class="badge text-bg-sucess"> {{$categoria->nome_categoria}}</span>                                  
+                            </td>
+
+                            {{-- DESCRIÇÃO PRODUTO --}}
+
+                            <td>
+                                <span class="badge text-bg-sucess"> {{$lista->descricao_longa_produto}}</span>
+                            </td>
+                            
+                            {{-- VALOR PRODUTO --}}
+                            
+                            <td>
+                                <span class="badge text-bg-sucess"> R$ {{$lista->valor_produto}}</span>
+                            </td>
+                            
+                            {{-- IMAGEM PRODUTO --}}
+
+                            <td>
+                                <img src="{{ asset('barista/assets/' . $lista->imagem_produto)}}" alt="{{$lista->nome_produto}}"
+                                class="rounded"
+                                style="
+                                   height: 75px;         
+                                    width: 100px;
+                                    object-fit: cover;
+
+                                "
+                                >                            
+                            </td>
+
+                            {{-- DESTAQUE PRODUTO --}}
+
+                            <td>
+                                @if ($lista->destaque_produto === 1)
+                                    <span class="badge text-bg-sucess"> Destacado</span>    
+                                @else
+                                    <span class="badge text-bg-sucess"> Não possui produto em destaque</span>
+                                    
+                                @endif
                             </td>
 
                             <td>
-                              @if($lista->status_banner === 'ATIVO')
+                              @if($lista->status_produto === 'ATIVO')
                                 <span class="badge text-bg-success">Ativo</span>    
                               @else
                                 <span class="badge text-bg-warning">Inativo</span>
@@ -159,7 +188,7 @@
                               <td colspan="5"
                               class="text-center py-4 text-muted"
                               >
-                              Nenhum Banner cadastrado.  
+                              Nenhum produto cadastrado.  
                               </td>
                             </tr>
                           @endforelse
@@ -173,9 +202,9 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                   Total de Banners:
+                   Total de Depoimentos:
                    <strong>
-                    {{$listaBanner-> count()}}
+                    {{$listaProduto-> count()}}
                    </strong>
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">

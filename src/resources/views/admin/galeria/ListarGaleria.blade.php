@@ -1,5 +1,4 @@
-
-      <main class="app-main">
+<main class="app-main">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -7,13 +6,13 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h1 class="mb-0 fs-3">Banners</h1>
+                <h1 class="mb-0 fs-3">Galerias</h1>
               </div>
               <div class="col-sm-6">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb float-sm-end">
                     <li class="breadcrumb-item"><a href="{{ route('dash')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Banner</li>
+                    <li class="breadcrumb-item active" aria-current="page">Galeria</li>
                   </ol>
                 </nav>
               </div>
@@ -36,7 +35,7 @@
                   <div class="card-header">
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
-                        <h3 class="card-title">Banners Cadastrados</h3>
+                        <h3 class="card-title">Galerias Cadastradas</h3>
                       </div>
                       <div class="col-12 col-md-8">
                         <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -48,8 +47,8 @@
                               type="search"
                               id="user-search"
                               class="form-control"
-                              placeholder="Pesquisar Banner"
-                              aria-label="Pesquisar Banner"
+                              placeholder="Pesquisar Galeria"
+                              aria-label="Pesquisar Galeria"
                               style="width: 180px"
                             />
                           </div>
@@ -70,7 +69,7 @@
                             data-bs-target="#modal-add-user"
                           >
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            Novo Banner
+                            Nova Galeria
                           </button>
                         </div>
                       </div>
@@ -91,22 +90,22 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @forelse ($listaBanner as $lista)
+                          @forelse ($listaGaleria as $lista)
                           <tr>
                             {{-- ID --}}
                             <td>
-                              {{$lista->id_banner}}
+                              {{$lista->id_galeria}}
                             </td>
 
                             {{-- IMAGEM --}}
                             <td>
-                              @if($lista->imagem_banner)
+                              @if($lista->imagem_galeria)
                                  <img 
-                                 src="{{ asset('barista/assets/' . $lista->imagem_banner)}}" alt="{{$lista->titulo_banner}}"
+                                 src="{{ asset('barista/assets/' . $lista->imagem_galeria)}}" alt="{{$lista->nome_galeria}}"
                                  class="rounded"
                                  style="
                                     width: 100px;
-                                    height: 75px;
+                                    height: 75px; 
                                     object-fit: cover;
                                  "
                                  >
@@ -120,11 +119,11 @@
 
                             {{-- TÍTULO --}}
                             <td>
-                              <span class="badge text-bg-sucess"> {{$lista->titulo_banner}}</span>
+                              <span class="badge text-bg-sucess"> {{$lista->nome_galeria}}</span>
                             </td>
 
                             <td>
-                              @if($lista->status_banner === 'ATIVO')
+                              @if($lista->status_galeria === 'ATIVO')
                                 <span class="badge text-bg-success">Ativo</span>    
                               @else
                                 <span class="badge text-bg-warning">Inativo</span>
@@ -159,7 +158,7 @@
                               <td colspan="5"
                               class="text-center py-4 text-muted"
                               >
-                              Nenhum Banner cadastrado.  
+                              Nenhuma Galeria cadastrado.  
                               </td>
                             </tr>
                           @endforelse
@@ -173,9 +172,9 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                   Total de Banners:
+                   Total de Galerias:
                    <strong>
-                    {{$listaBanner-> count()}}
+                    {{$listaGaleria-> count()}}
                    </strong>
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">

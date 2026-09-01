@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Produto;
 use App\Models\Venda;
+
 class AdminController extends Controller{
     public function dash(){
         $qtdeCliente = Cliente::where('status_cliente', 'ATIVO')->count();

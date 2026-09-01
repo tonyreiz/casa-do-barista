@@ -56,7 +56,7 @@
    
               <li class="nav-header">PRODUTOS</li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.produto.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-receipt-cutoff"></i>
                   <p>
                     PRODUTOS
@@ -66,7 +66,7 @@
               
               </li>
               <li class="nav-item">
-                <a href="./users.html" class="nav-link">
+                <a href="{{ route('admin.categoria.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-tags-fill"></i>
                   <p>CATEGORIAS</p>
                 </a>
@@ -74,7 +74,7 @@
 
               <li class="nav-header">VENDAS</li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.venda.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-cash-coin"></i>
                   <p>
                     VENDAS
@@ -84,7 +84,7 @@
               
               </li>
               <li class="nav-item">
-                <a href="./users.html" class="nav-link">
+                <a href="{{ route('admin.cliente.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-people"></i>
                   <p>CLIENTES</p>
                 </a>
@@ -100,7 +100,7 @@
                   </p>
                 </a>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.galeria.index')}}" class="nav-link">
                       <i class="nav-icon bi bi-images"></i>
                       <p>
                         GALERIA 
@@ -111,7 +111,7 @@
                   </li>
                   
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.depoimento.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-file-earmark-text"></i>
                   <p>
                     DEPOIMENTOS
@@ -124,7 +124,7 @@
                   
                   
                 <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.tempo.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-alarm"></i>
                   <p>
                     LINHA DO TEMPO
@@ -135,7 +135,7 @@
               </li>
 
                   <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('admin.newsLetter.index')}}" class="nav-link">
                     <i class="nav-icon bi bi-newspaper"></i>
                     <p>
                     NEWSLETTERS

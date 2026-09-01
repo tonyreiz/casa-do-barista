@@ -11,7 +11,10 @@ class Venda extends Model{
     protected $primaryKey = 'id_venda';
 
     //permite se a data de criação aparece ou não
-    public $timestamps = false;
+    public $timestamps = true;
+
+    CONST CREATED_AT = 'data_criacao_venda';
+    CONST UPDATED_AT = 'data_atualizacao_venda';
 
     //processo do que vai poder alterar
     protected $fillable = [

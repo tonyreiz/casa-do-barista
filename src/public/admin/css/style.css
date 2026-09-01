@@ -153,4 +153,21 @@ h1, .h1{
 
 .badge{
     color: #000;
+    font-size: 15px;
+}
+
+[data-bs-theme = "dark"] .badge{
+    color: #fff;
+}
+
+/* SELECTION TABELA*/
+
+.form-select-sm{
+    border-radius: var(--cor-secundaria-2) !important;
+}
+
+[data-bs-theme = "dark"] .input-group-text:hover{
+    border-color: var(--cor-secundaria-2) !important;
+  box-shadow: var(--cor-secundaria-2) 0 0 10px;
+  background-color: rgba(0, 0, 0, 0.752);
 }
