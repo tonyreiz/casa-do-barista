@@ -138,7 +138,8 @@
                                 <button
                                   type="button"
                                   class="btn btn-outline-secondary"
-                                  aria-label="Editar"
+                                  aria-label="Editar - {{$lista->id_banner}}"
+                                  submit="{{$lista->id_banner}}";
                                 >
                                   <i class="bi bi-pencil" aria-hidden="true"> </i>
                                 </button>
@@ -220,9 +221,15 @@
             >
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <form>
+
+                  <!-- FORMA DE CADASTRO -->
+                  <form action="{{ route('admin.banner.store') }}"
+                  method="POST"
+                  enctype="multpart/form-data">
+                  @csrf
+
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                      <h5 class="modal-title" id="modal-add-user-label">Cadastrar novo Banner</h5>
                       <button
                         type="button"
                         class="btn-close"
@@ -230,54 +237,48 @@
                         aria-label="Close"
                       ></button>
                     </div>
+
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Full name </label>
+                        <label for="new-banner-name" class="form-label"> Título do Banner </label>
                         <input
                           type="text"
                           class="form-control"
-                          id="new-user-name"
-                          placeholder="e.g. Jane Doe"
+                          id="new-banner-name"
+                          placeholder="Promoção de Inverno"
                           required
+                          name="titulo_banner"
                         />
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-email" class="form-label"> Email address </label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="new-user-email"
-                          placeholder="name@example.com"
-                          required
-                        />
-                        <div class="form-text">The invitation will be sent to this address.</div>
+                        <label for="img-banner" class="form-label"> Selecione uma Imagem </label>
+
+                        <input type="file" class="form-control input-banner" id="img-banner" accept="image/*" name="img_banner" required>
+
+                        <label for="img-banner" class="banner-upload"> 
+                          <img  id="ver-banner" src="{{ asset('barista/assets/banner/sem-banner.svg') }}" alt="Selecione uma imagem para o banner">
+
+                          <div class="banner-upload">
+                              <i class="bi bi-image"></i>
+                              <span>Clique para Selecionar o Banner</span>
+                        </div>
+                      </label>
+                 
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-role" class="form-label"> Role </label>
-                        <select id="new-user-role" class="form-select">
-                          <option selected>Subscriber</option>
-                          <option>Author</option>
-                          <option>Editor</option>
-                          <option>Administrator</option>
+                        <label for="new-banner-role" class="form-label"> Status </label>
+                        <select id="new-banner-role" class="form-select" name="status_banner">
+                          <option selected>Ativo</option>
+                          <option>Inativo</option>
                         </select>
                       </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="new-user-welcome"
-                          checked
-                        />
-                        <label class="form-check-label" for="new-user-welcome">
-                          Send a welcome email with login details
-                        </label>
-                      </div>
+                    
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Cancel
+                        Cancelar
                       </button>
-                      <button type="submit" class="btn btn-primary">Create user</button>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                   </form>
                 </div>
@@ -328,3 +329,21 @@
         <!--end::App Content-->
       </main>
      
+      <!-- JS do input banner: -->
+      <script>
+          const inputBanner = document.getElementById('img-banner');
+          const previewBanner = document.getElementById('ver-banner');
+      
+          inputBanner.addEventListener('change', function() {
+      
+              const arquivo = this.files[0];
+      
+              if (arquivo) {
+      
+                  previewBanner.src = URL.createObjectURL(arquivo);
+      
+              }
+      
+          });
+      </script>
+      
