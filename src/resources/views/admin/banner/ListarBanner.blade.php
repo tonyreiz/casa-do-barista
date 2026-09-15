@@ -19,6 +19,25 @@
               </div>
             </div>
             <!--end::Row-->
+
+            @if(session('sucesso'))
+
+              <!-- ALERTAS SUCESSO-->
+              <div class="alert alert-success" role="alert">
+                <i class="bi bi-check-circle-fill"></i>
+                {{ session('sucesso') }}
+              </div>
+            @endif
+
+            @if(session('erro'))
+
+            <!-- ALERTAS ERROS-->
+            <div class="alert alert-danger" role="alert">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              {{ session('erro') }}
+            </div>
+            @endif
+            
           </div>
           <!--end::Container-->
         </div>
@@ -205,11 +224,14 @@
                   </div>
                   <!--end::Card Footer-->
                 </div>
+                
                 <!--end::Card-->
               </div>
               <!-- /.col -->
             </div>
             <!--end::Row-->
+
+
 
             <!--begin::Add User Modal-->
             <div
@@ -225,7 +247,7 @@
                   <!-- FORMA DE CADASTRO -->
                   <form action="{{ route('admin.banner.store') }}"
                   method="POST"
-                  enctype="multpart/form-data">
+                  enctype="multipart/form-data">
                   @csrf
 
                     <div class="modal-header">
@@ -253,7 +275,7 @@
                       <div class="mb-3">
                         <label for="img-banner" class="form-label"> Selecione uma Imagem </label>
 
-                        <input type="file" class="form-control input-banner" id="img-banner" accept="image/*" name="img_banner" required>
+                        <input type="file" class="form-control input-banner" id="img-banner" accept="image/*" name="imagem_banner" required>
 
                         <label for="img-banner" class="banner-upload"> 
                           <img  id="ver-banner" src="{{ asset('barista/assets/banner/sem-banner.svg') }}" alt="Selecione uma imagem para o banner">
@@ -268,8 +290,8 @@
                       <div class="mb-3">
                         <label for="new-banner-role" class="form-label"> Status </label>
                         <select id="new-banner-role" class="form-select" name="status_banner">
-                          <option selected>Ativo</option>
-                          <option>Inativo</option>
+                          <option value="ATIVO">Ativo</option>
+                          <option value="INATIVO">Inativo</option>
                         </select>
                       </div>
                     
@@ -281,6 +303,9 @@
                       <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                   </form>
+
+
+
                 </div>
               </div>
             </div>
