@@ -36,11 +36,11 @@ Route::prefix('admin')->group(function(){
         // STORE = FORMA PARA DIZER QUE VAI CADASTRAR O BANNER, POIS O STORE É PARA SALVAR NO BANCO DE DADOS
         Route::post('/banners', [BannerController::class, 'store'])->name('admin.banner.store'); // CADASTRAR BANNER
 
-        Route::get('/banners/{id}/editar', [BannerController::class, 'edit'])->name('admin.banner.edit'); // ABRIR O FORM DE EDITAR BANNER
+        // Route::get('/banners/{id}/editar', [BannerController::class, 'edit'])->name('admin.banner.edit');  ABRIR O FORM DE EDITAR BANNER
         
         Route::put('/banners/{id}', [BannerController::class, 'update'])->name('admin.banner.update'); // ATUALIZAR  BANNER
         
-        Route::patch('/banners/{id}/status', [BannerController::class, 'status'])->name('admin.banner.status'); // ATUALIZAR  BANNER
+        Route::patch('/banners/{id}', [BannerController::class, 'status'])->name('admin.banner.status'); // ATIVAR  BANNER
 
 
     //CRUD GALERIA
