@@ -29,6 +29,8 @@ class BannerController extends Controller{
 
         $caminhoArquivo = null;
 
+     
+
         try{
             DB::beginTransaction();
             // 2- CADASTRAR NO BANCO DE DADOS
@@ -101,17 +103,20 @@ class BannerController extends Controller{
         // 1- VALIDAR OS DADOS
         $dados = $request->validate([
             'titulo_banner' => 'required|max:50',
-            'imagem_banner' => 'required|image|mimes:jpg,png,webp,jpeg|max:4096',
+            'imagem_banner' => 'nullable|image|mimes:jpg,png,webp,jpeg|max:4096',
             'status_banner' => 'required|in:ATIVO,INATIVO'
         ]);
 
+           
+
         // 2- BUSCAR O BANNER
-        $banner = Banner::findOrFall($id);
+        $banner = Banner::findOrFail($id);
 
         
         try{
             // TÍTULO ATUAL
             $tituloSlug = Str::slug($dados['titulo_banner']);
+   
 
             //NOME DA PASTA
             $pasta = public_path('barista/assets/banner');
@@ -120,29 +125,32 @@ class BannerController extends Controller{
             $caminhoArquivo = $banner->imagem_banner;
 
             // CAMINHO FÍSICO DA IMAGEM ATUAL
-            $imgAntiga = public_path('barista/assets' .  $banner->imagem_banner);
+            $imgAntiga = public_path('barista/assets/' .  $banner->imagem_banner);
 
+            
             // CASO 1: SE FOR UMA NOVA IMAGEM
-            if($dados->hasFile('imagem_banner')){
-
+            if($request->hasFile('imagem_banner')){
+                
                 $imagem = $request->file('imagem_banner');
-
+                
                 $extensao = strtolower($imagem->getClientOriginalExtension());
-
+                
                 $nomeImg = $tituloSlug . '_' . $banner->id_banner . '_' . $extensao;
-
+                
                 // EXCLUIR A IMAGEM ANTERIOR
-                    if (file_exists($imgAntiga)) {
-                        unlink($imgAntiga);
-                    }
+                if (file_exists($imgAntiga)) {
+                    unlink($imgAntiga);
+                }
                 
                 // SALVA NOVA IMAGEM
-                    $imagem->move($pasta, $nomeImg);
-
-                    $caminhoArquivo = 'banner/' . $nomeImg;
+                $imagem->move($pasta, $nomeImg);
+                // dd($caminhoArquivo);
+                
+                $caminhoArquivo = 'banner/' . $nomeImg;
             } elseif($banner->titulo_banner !== $request->titulo_banner){
+
                 //  CASO 2: MUDOU SOMENTE O NOME 
-                    $extensao = pathinfo($banner->titulo_banner, PATHINFO_EXTENSION);   
+                    $extensao = pathinfo($banner->imagem_banner, PATHINFO_EXTENSION);   
 
                     $nomeImg = $tituloSlug . '_' . $banner->id_banner . '_' . $extensao;
 
@@ -161,7 +169,7 @@ class BannerController extends Controller{
             // ATUALIZA O BANCO
             $banner->update([
                 'titulo_banner' => $dados['titulo_banner'],
-                'imagem_banner' => $caminhoArquivo, 
+                'imagem_banner' => $caminhoArquivo,
                 'status_banner' => $dados['status_banner'] 
             ]);
 
@@ -170,7 +178,7 @@ class BannerController extends Controller{
             // VOLTAR E ENVIAR UMA MENSAGEM
                 return redirect()
                 ->route('admin.banner.index')
-                ->with('Sucesso', 'Banner:' . $banner->titulo_banner . ' atualizado com sucesso!');
+                ->with('sucesso', 'Banner:' . $banner->titulo_banner . ' atualizado com sucesso!');
 
         }catch(\Throwable $erro){
             
@@ -180,8 +188,11 @@ class BannerController extends Controller{
             return redirect()
             ->back()
             ->with('erro', 'Não foi possível atualizar o banner. Tente mais tarde!'); 
+            
                    
         }
+
+        
 
     } // FIM DO METHOD UPDATE
 
@@ -189,7 +200,7 @@ class BannerController extends Controller{
     public function status(Request $request, int $id){
 
         try{
-            $banner = Banner::findOrFall($id);
+            $banner = Banner::findOrFail($id);
             
             $novoStatus = $banner->status_banner === 'ATIVO' ? 'INATIVO' : 'ATIVO';
 
@@ -203,7 +214,7 @@ class BannerController extends Controller{
             // VOLTAR E ENVIAR UMA MENSAGEM
             return redirect()
             ->route('admin.banner.index')
-            ->with('Sucesso', $mensagem);
+            ->with('sucesso', $mensagem);
 
         } catch(\Throwable $erro){
             report($erro);
