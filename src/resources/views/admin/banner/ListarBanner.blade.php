@@ -136,7 +136,8 @@
                       <td>
                         <span class="badge text-bg-sucess"> {{$lista->titulo_banner}}</span>
                       </td>
-
+                      
+                      {{-- STATUS --}}
                       <td>
                         @if($lista->status_banner === 'ATIVO')
                         <span class="badge text-bg-success">Ativo</span>

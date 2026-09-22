@@ -2,31 +2,64 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
-#[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
+    // CRIPTOGRAFA A SENHA
     use HasFactory, Notifiable;
 
+    // Tabela utilizada para autenticação
+    protected $table = 'tbl_usuarios';
+
+    // Chave primária
+    protected $primaryKey = 'id_usuarios';
+
+    // Datas personalizadas da tabela
+    const CREATED_AT = 'data_criacao_usuarios';
+    const UPDATED_AT = 'data_atualizacao_usuarios';
+
+    // Campos permitidos
+    protected $fillable = [
+        'nome_usuarios',
+        'email_usuarios',
+        'senha_usuarios',
+        'foto_usuarios',
+        'nivel_usuarios',
+        'status_usuarios',  
+    ];
+
+    // Campos ocultos
+    protected $hidden = [
+        'senha_usuarios',
+    ];
+
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * Conversões automáticas
      */
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'senha_usuarios' => 'hashed',
         ];
     }
+
+    /**
+     * Campo utilizado pelo Laravel como senha.
+     */
+    public function getAuthPasswordName(): string
+    {
+        return 'senha_usuarios';
+    }
+
+    /**
+     * Retorna a senha criptografada.
+     */
+    public function getAuthPassword(): string
+    {
+        return $this->senha_usuarios;
+    }
 }
+

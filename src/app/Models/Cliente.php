@@ -12,7 +12,7 @@ class Cliente extends Model{
 
     //laravel controla as dats de criacao e atualizacao
     const CREATE_AT = 'data_criacao_cliente';
-    const UPDATED_UP = 'data_atualizacao_cliente';
+    const UPDATED_AT = 'data_atualizacao_cliente';
 
     protected $fillable = [
         'nome_cliente ',

@@ -44,7 +44,7 @@
             >
 
                  <li class="nav-item">
-                <a href="{{route('dash')}}" class="nav-link">
+                <a href="{{ route('dashboard')}}" class="nav-link">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     DASHBOARD
